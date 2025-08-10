@@ -1,0 +1,368 @@
+:root{
+    --font-family:"Rubik", "Open Sans", sans-serif;
+
+/* Text */
+
+--Purple-300 /*(sub-heading at the top of the app UI)*/: hsl(276, 100%, 81%);
+--Purple-600 /*(chat on the left)*/: hsl(276, 55%, 52%);
+--Gray-500 /*(chat on the right, paragraph)*/: hsl(270, 7%, 64%);
+--Gray-300 /*(placeholder text)*/: hsl(206, 6%, 79%);
+--Purple-950 /*(main heading)*/: hsl(271, 36%, 24%);
+
+/* Gradients */
+
+--Pink-500: hsl(293, 100%, 63%);
+--Purple-500: hsl(264, 100%, 61%);
+
+
+
+/* Secondary */
+
+--White: hsl(0, 100%, 100%);
+--Gray-100 /*(app background)*/: hsl(270, 20%, 96%);
+--Purple-950 /*(submit button background)*/: hsl(271, 36%, 24%);
+--Pink-400 /*(radio button outline)*/: hsl(289, 100%, 72%);
+}
+body{
+    background-color: black;
+    margin: 0;
+}
+
+
+.container{
+    width: 100%;
+    height: 90vh;
+    background-color: var(--Gray-100);
+    position: relative;
+    margin-top: 30px;
+    overflow: hidden;
+    font-family: var(--font-family);
+    
+}
+
+.container::after{
+    content: "";
+    width: 35%;
+    height:85%;
+    background-image: linear-gradient(240deg, var(--Pink-500), var(--Purple-500));
+    position: absolute;
+    border-bottom-right-radius:250px ;
+    border-bottom-left-radius:250px ;
+    top: 0;
+    left: -3%;
+    z-index: 1;
+
+}
+
+.container::before{
+    content: "";
+        width: 35%;
+    height:85%;
+        position: absolute;
+            bottom: 0;
+    right: -3%;
+    z-index: 1;
+    border-top-right-radius:250px  ;
+    border-top-left-radius:250px  ;
+    background-color: var(--Gray-500);
+    opacity: .1;
+}
+
+.container .main-page{
+    position: relative;
+    z-index: 2;
+    display: flex;
+    width: 60%;
+    margin: 5% auto;
+    justify-content: space-between;
+}
+
+
+/* phone edit */
+
+.main-page .phon{
+    width: 33%;
+    background-color: var(--White);
+    height: 550px;
+    padding: 10px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    margin-left: 50px;
+}
+
+.main-page .phon .title{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    background-image: linear-gradient(30deg, var(--Purple-500) , var(--Pink-500));
+    height: 20px;
+    padding: 35px 0 12px 0 ;
+    border-radius: 20px 20px 10px 10px ;
+    -webkit-border-radius: 20px 20px 10px 10px ;
+    -moz-border-radius: 20px 20px 10px 10px ;
+    -ms-border-radius: 20px 20px 10px 10px ;
+    -o-border-radius: 20px 20px 10px 10px ;
+    color: var(--Gray-100);
+}
+.main-page .phon .title::after{
+    content: "";
+    width: 60%;
+    height: 20px;
+    position: absolute;
+    background-color: var(--White);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    border-radius: 0px 0px 20px 20px;
+    -webkit-transform: translate(-50%, 0px);
+    -moz-transform: translate(-50%, 0px);
+    -ms-transform: translate(-50%, 0px);
+    -o-transform: translate(-50%, 0px);
+    -webkit-border-radius: 0px 0px 20px 20px;
+    -moz-border-radius: 0px 0px 20px 20px;
+    -ms-border-radius: 0px 0px 20px 20px;
+    -o-border-radius: 0px 0px 20px 20px;
+}
+
+.main-page .phon  .fa-chevron-left{
+    margin: 0 0 0 20px ;
+    font-size: 18px;
+}
+.main-page .phon .name{
+    margin: 0 0 0 5px;
+}
+.main-page .phon .name p{
+    margin: 0;
+    font-size: 14px;
+    font-weight: 600;
+}
+.main-page .phon .name span{
+    margin: 0;
+    font-size: 10px;
+    opacity: .8;
+}
+.main-page .phon .fa-ellipsis-vertical{
+font-size: 18px;
+position: absolute;
+    right: 10%;
+}
+
+.main-page .phon .title img{
+    width: 8%;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 3px solid var(--Gray-100);
+    margin: 0 5px 0 5px ;
+}
+
+/* chat edit */
+.main-page .chat{
+    background-color: hsl(206deg 6% 79% / 20%);
+    position: relative;
+    padding: 0 5px 0 5px;
+    border-radius: 10px 10px 20px 20px;
+    z-index: 1;
+    border: 1px solid var(--Gray-300 /*(placeholder text)*/);
+    -webkit-border-radius: 10px 10px 20px 20px;
+    -moz-border-radius: 10px 10px 20px 20px;
+    -ms-border-radius: 10px 10px 20px 20px;
+    -o-border-radius: 10px 10px 20px 20px;
+    height: 480px;
+}
+
+.main-page .chat .left-chat
+{
+    color: var(--Purple-600);
+    background-color: hsl(206deg 6% 79% / 25%);
+    font-size: 10px;
+    width: 50%;
+    padding: 8px;
+    margin-left: 5px;
+    border-radius: 20px 20px 20px 5px;
+    -webkit-border-radius: 20px 20px 20px 5px;
+    -moz-border-radius: 20px 20px 20px 5px;
+    -ms-border-radius: 20px 20px 20px 5px;
+    -o-border-radius: 20px 20px 20px 5px;
+}
+
+
+.main-page .chat .image{
+        display: flex;
+    justify-content: end;
+}
+.main-page .chat .image img{
+    width: 15%;
+    margin-right: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    
+}
+
+.main-page .chat .right-chat{
+        background-color: var(--White);
+        color: var(--Gray-500);
+        font-size: 10px;
+        width: 50%;
+        padding: 8px;
+        margin-left: 5px;
+        border-radius: 20px 20px 5px 20px;
+        position: relative;
+        right: -40%;
+        -webkit-border-radius: 20px 20px 5px 20px;
+        -moz-border-radius: 20px 20px 5px 20px;
+        -ms-border-radius: 20px 20px 5px 20px;
+        -o-border-radius: 20px 20px 5px 20px;
+}
+
+.main-page .chat .sceler{
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 65%;
+    padding: 10px;
+    margin: 0 0 10px 5px ;
+    border-radius: 20px 20px 20px 5px;
+    -webkit-border-radius: 20px 20px 20px 5px;
+    -moz-border-radius: 20px 20px 20px 5px;
+    -ms-border-radius: 20px 20px 20px 5px;
+    -o-border-radius: 20px 20px 20px 5px;
+    background-image: linear-gradient(270deg, var(--Pink-500), var(--Purple-500));
+    color: var(--Gray-100);
+}
+
+.main-page .chat .sceler .fa-circle{
+margin-right: 5px;
+font-weight: 200;
+font-size: 18px;
+opacity: .5 ;
+}
+
+.main-page .chat .sceler p{
+margin: 0;
+font-size: 12px;
+}
+.main-page .chat .sceler span{
+    font-size: 18px;
+    font-weight: 600;
+    position: absolute;
+    right: 10%;
+}
+
+
+.main-page .chat .chat-bar{
+    background-color: var(--White);
+    margin: 0 5px 10px 5px;
+    padding: 5px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.main-page .chat .chat-bar span{
+    font-size: 16px;
+    margin: 10px;
+    color: var(--Gray-300);
+    
+}
+.main-page .chat .chat-bar .fa-chevron-right{ 
+font-size: 18px;
+    background-color: var(--Purple-950);
+    width: 30px;
+    height: 30px;
+    color: var(--White);
+    display: flex
+;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    right: 5%;
+}
+
+
+
+
+
+
+
+
+
+
+/* contant edit */
+.main-page .contant{
+    width: 55%;
+        width: 49%;
+    display: flex
+;
+    flex-direction: column;
+    justify-content: center;
+}
+.main-page .contant h1{
+font-size: 40px;
+    font-weight: 500;
+    color: var(--Purple-950 /*(main heading)*/);
+}
+.main-page .contant p{
+    font-size: 16px;
+    color: var(--Gray-500 /*(chat on the right, paragraph)*/);
+    line-height: 1.6;
+    word-spacing: .4px;
+}
+
+
+
+/* media */
+@media(max-width:380px){
+    .container{
+        height: fit-content;
+    }
+    .container::after{
+                width: 85%;
+        height:48%;
+        left: -30%;
+    }
+    .container::before{
+                width: 85%;
+        height: 48%;
+        right: -30%;
+    }
+
+    .container .main-page{
+        width: 100%;
+        align-items: center;
+        flex-direction: column;
+    }
+    
+    .main-page .phon{
+        width: 70%;
+        margin-left:0 ;
+    }
+    .main-page .contant{
+        align-items: center;
+        width: 90%;
+        margin-top: 30px;
+        text-align: center;
+    }
+    .main-page .contant p {
+width: 90%;
+    }
+
+}
